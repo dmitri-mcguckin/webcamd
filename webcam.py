@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-# A simple MJPEG http(s) server for Octoprint
+# A simple MJPEG HTTP server for Octoprint
 # Original author: Igor Maculan <n3wtron@gmail.com>
 #
 # Fixes by Christopher RYU <software-github@disavowed.jp>
@@ -50,7 +50,7 @@ class ThreadedHTTPServerV6(ThreadedHTTPServer):
 def main():
   global capture
 
-  parser = argparse.ArgumentParser(description='A simple MJPEG http(s) server for Octoprint')
+  parser = argparse.ArgumentParser(description='A simple MJPEG HTTP server for Octoprint')
   parser.add_argument('--width', type=int, default=1920, help='Web camera pixel width (default 1920)')
   parser.add_argument('--height', type=int, default=1080, help='Web camera pixel height (default 1080)')
   parser.add_argument('--index', type=int, default=0, help='/dev/videoX (default X=0)')
