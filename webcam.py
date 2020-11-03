@@ -66,6 +66,7 @@ def main():
     server = ThreadedHTTPServerV6((args.bindaddress, args.port), CamHandler)
     print("server started")
     server.serve_forever()
+  except:
     capture.release()
     server.socket.close()
 
