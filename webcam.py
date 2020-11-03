@@ -62,7 +62,6 @@ def main():
   capture = cv2.VideoCapture(args.index)
   capture.set(cv2.CAP_PROP_FRAME_WIDTH, args.width); 
   capture.set(cv2.CAP_PROP_FRAME_HEIGHT, args.height);
-  capture.set(cv2.CAP_PROP_SATURATION, 0.2);
   try:
     server = ThreadedHTTPServerV6((args.bindaddress, args.port), CamHandler)
     print("server started")
