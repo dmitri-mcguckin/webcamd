@@ -54,8 +54,10 @@ def main():
   parser.add_argument('--width', type=int, default=1920, help='Web camera pixel width (default 1920)')
   parser.add_argument('--height', type=int, default=1080, help='Web camera pixel height (default 1080)')
   parser.add_argument('--index', type=int, default=0, help='/dev/videoX (default X=0)')
-  parser.add_argument('--bindaddress', type=str, default='::', help='HTTP bind address (default \'::\')')
+  parser.add_argument('--v4bindaddress', type=str, default='0.0.0.0', help='IPv4 HTTP bind address (default \'0.0.0.0\')')
+  parser.add_argument('--v6bindaddress', type=str, default='::', help='IPv6 HTTP bind address (default \'::\')')
   parser.add_argument('--port', type=int, default=8080, help='HTTP bind port (default 8080)')
+  parser.add_argument('--ipv', type=int, default=6, help='IP version (default=6)')
 
   args = parser.parse_args()
 
@@ -63,7 +65,10 @@ def main():
   capture.set(cv2.CAP_PROP_FRAME_WIDTH, args.width); 
   capture.set(cv2.CAP_PROP_FRAME_HEIGHT, args.height);
   try:
-    server = ThreadedHTTPServerV6((args.bindaddress, args.port), CamHandler)
+    if args.ipv == 4:
+      server = ThreadedHTTPServer((args.v4bindaddress, args.port), CamHandler)
+    else:
+      server = ThreadedHTTPServerV6((args.v6bindaddress, args.port), CamHandler)
     print("server started")
     server.serve_forever()
   except:
