@@ -32,7 +32,7 @@ class CamHandler(BaseHTTPRequestHandler):
         jpg = Image.fromarray(img)
         tmpFile = BytesIO()
         jpg.save(tmpFile, "JPEG")
-        self.wfile.write( b'--jpgboundary')
+        self.wfile.write( b'--jpgboundary\n')
         self.send_header('Content-type', 'image/jpeg')
         self.send_header('Content-length', str(sys.getsizeof(tmpFile)))
         self.end_headers()
