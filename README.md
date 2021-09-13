@@ -1,7 +1,6 @@
 # octoprint-stuff
 
-octoprint-stuff is a collection of bits and bobs that make running Octoprint
-a tad easier.
+octoprint-stuff is a collection of bits and bobs that make running Octoprint a tad easier.
 
 The most notable component is webcam.py.  It is a minimalist drop-in replacement
 for mjpg-streamer, written in python, that addresses the following issues:
@@ -18,3 +17,26 @@ webcam@.service is a systemd unit file for webcam.py.
 
 haproxy.cfg is a configuration file for haproxy that actually works with non-ancient versions of haproxy, and enforces SSL connections to Octoprint.
 
+***
+
+# `webcamd` Quickstart
+
+### Install Locally
+
+`$` `pip install .`
+
+### Run the module directly
+
+`$` `python3 -m webcamd`
+
+### Help and Usage
+
+`$` `webcamd --help`
+
+***
+
+# Development
+
+### Install Locally with `dev` dependencies
+
+`$` `pip install -e .[dev]`
