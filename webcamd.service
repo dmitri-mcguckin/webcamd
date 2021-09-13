@@ -1,0 +1,14 @@
+[Unit]
+Description=Webcam Daemon. A minimalist webcam streaming service.
+After=network.online.target
+Wants=network.online.target
+
+[Service]
+Type=simple
+User=octoprint
+Group=octoprint
+ExecStart=/usr/bin/webcamd
+ExecStop=killall -u webcam webcamd
+
+[Install]
+WantedBy=multi-user.target

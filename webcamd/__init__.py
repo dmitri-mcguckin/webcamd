@@ -3,7 +3,7 @@ MINOR = 0
 PATCH = 1
 
 APP_NAME = 'webcamd'
-APP_DESCRIPTION = 'A simple MJPEG HTTP server for Octoprint'
+APP_DESCRIPTION = 'A minimalist webcam streaming service.'
 APP_VERSION = f'{MAJOR}.{MINOR}.{PATCH}'
 APP_AUTHOR = 'Igor Maculan'
 APP_AUTHOR_EMAIL = 'n3wtron@gmail.com'
