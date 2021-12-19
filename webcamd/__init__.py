@@ -1,6 +1,6 @@
 MAJOR = 1
 MINOR = 0
-PATCH = 0
+PATCH = 1
 
 APP_NAME = 'webcamd'
 APP_DESCRIPTION = 'A minimalist service for streaming a webcam over HLS'
