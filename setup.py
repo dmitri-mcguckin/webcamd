@@ -16,10 +16,11 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url=wd.APP_URL,
     project_urls={
-        'Documentation': 'https://github.com/christopherkobayashi/octoprint-stuff',
-        'Bug Tracking': 'https://github.com/christopherkobayashi/octoprint-stuff/issues'
+        'Documentation': 'https://github.com/dmitri-mcguckin/webcamd/blob/main/README.md',
+        'Bug Tracking': 'https://github.com/dmitri-mcguckin/webcamd/issues'
     },
     packages=setuptools.find_packages(),
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",

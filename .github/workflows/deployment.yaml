@@ -1,0 +1,31 @@
+name: Deploy to PyPi
+
+on:
+  release:
+    types: published
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Update Pip
+      run: python3 -m pip install --upgrade pip
+
+    - name: Install regular and dev dependencies
+      run: pip install .[dev]
+
+    - name: Build and publish
+      env:
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: |
+        python setup.py sdist bdist_wheel
+        twine upload dist/*
