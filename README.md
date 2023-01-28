@@ -74,3 +74,11 @@ And enable the service, to allow the service to start automatically on boot:
 ### Install Locally with `dev` dependencies
 
 `$` `pip install -e .[dev]`
+
+***
+
+&nbsp;
+
+# Contributors and Authors
+
+This repository is a derevation of the [octoprint-stuff repo](https://github.com/christopherkobayashi/octoprint-stuff) maintained by Christopher RYU and Shell Shrader. The specific webcampy script that inspired this repository was originally authored by Igor Maculan.
